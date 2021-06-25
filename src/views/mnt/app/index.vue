@@ -45,6 +45,9 @@
         <el-form-item label="启动脚本" prop="startScript">
           <el-input v-model="form.startScript" :rows="3" type="textarea" autosize style="width: 670px" placeholder="" />
         </el-form-item>
+        <el-form-item label="负责人 add" prop="startScript">
+          <el-input v-model="form.startScript" :rows="3" type="textarea" autosize style="width: 670px" placeholder="" />
+        </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button type="text" @click="crud.cancelCU">取消</el-button>
