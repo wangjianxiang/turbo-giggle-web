@@ -18,6 +18,16 @@
             type="primary"
             icon="el-icon-upload"
             @click="sysRestore"
+          >版本发布
+          </el-button>
+          <el-button
+            v-permission="['admin','deploy:add']"
+            :disabled="!selectIndex"
+            class="filter-item"
+            size="mini"
+            type="primary"
+            icon="el-icon-upload"
+            @click="sysRestore"
           >系统还原
           </el-button>
           <el-button

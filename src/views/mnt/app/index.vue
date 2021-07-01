@@ -27,7 +27,13 @@
         <el-form-item label="应用名称" prop="name">
           <el-input v-model="form.name" style="width: 670px" placeholder="部署后的文件或者目录名称，用于备份" />
         </el-form-item>
-        <el-form-item label="应用端口" prop="port">
+        <el-form-item label="应用编码" prop="code">
+          <el-input v-model="form.code" style="width: 670px" placeholder="应用的唯一编码" />
+        </el-form-item>
+        <!--<el-form-item label="应用负责人" prop="responsiblePerson">
+          <el-input v-model="form.responsiblePerson" style="width: 670px" placeholder="应用的唯一编码" />
+        </el-form-item>-->
+        <!--<el-form-item label="应用端口" prop="port">
           <el-input-number v-model.number="form.port" placeholder="例如：8080" />
         </el-form-item>
         <el-form-item label="上传目录" prop="uploadPath">
@@ -44,10 +50,7 @@
         </el-form-item>
         <el-form-item label="启动脚本" prop="startScript">
           <el-input v-model="form.startScript" :rows="3" type="textarea" autosize style="width: 670px" placeholder="" />
-        </el-form-item>
-        <el-form-item label="负责人 add" prop="startScript">
-          <el-input v-model="form.startScript" :rows="3" type="textarea" autosize style="width: 670px" placeholder="" />
-        </el-form-item>
+        </el-form-item>-->
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button type="text" @click="crud.cancelCU">取消</el-button>
@@ -90,7 +93,7 @@ import udOperation from '@crud/UD.operation'
 import pagination from '@crud/Pagination'
 import DateRangePicker from '@/components/DateRangePicker'
 
-const defaultForm = { id: null, name: null, port: 8080, uploadPath: '/opt/upload', deployPath: '/opt/app', backupPath: '/opt/backup', startScript: null, deployScript: null }
+const defaultForm = { id: null, name: null, code: null, port: 8080, uploadPath: '/opt/upload', deployPath: '/opt/app', backupPath: '/opt/backup', startScript: null, deployScript: null }
 export default {
   name: 'App',
   components: { pagination, crudOperation, rrOperation, udOperation, DateRangePicker },
@@ -110,7 +113,10 @@ export default {
         name: [
           { required: true, message: '请输入应用名称', trigger: 'blur' }
         ],
-        port: [
+        code: [
+          { required: true, message: '请输入应用编码', trigger: 'blur' }
+        ],
+        /*port: [
           { required: true, message: '请输入应用端口', trigger: 'blur', type: 'number' }
         ],
         uploadPath: [
@@ -127,7 +133,7 @@ export default {
         ],
         deployScript: [
           { required: true, message: '请输入部署脚本', trigger: 'blur' }
-        ]
+        ]*/
       }
     }
   },
