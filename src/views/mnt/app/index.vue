@@ -19,6 +19,16 @@
           icon="el-icon-plus"
           @click="copy"
         >复制</el-button>
+
+        <el-button
+          slot="left"
+          v-permission="['admin','app:add']"
+          class="filter-item"
+          size="mini"
+          type="primary"
+          icon="el-icon-plus"
+          @click="createApp"
+        >创建应用</el-button>
       </crudOperation>
     </div>
     <!--表单组件-->
@@ -145,6 +155,9 @@ export default {
       this.form.id = null
       this.form.createTime = null
       this.crud.toAdd()
+    },
+    createApp() {
+      this.$router.push('/mnt/app/create')
     },
     handleCurrentChange(row) {
       this.currentRow = JSON.parse(JSON.stringify(row))

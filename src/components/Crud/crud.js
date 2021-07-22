@@ -55,7 +55,7 @@ function CRUD(options) {
     // 在主页准备
     queryOnPresenterCreated: true,
     // 调试开关
-    debug: false
+    debug: true
   }
   options = mergeOptions(defaultOptions, options)
   const data = {
