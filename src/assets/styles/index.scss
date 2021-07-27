@@ -180,3 +180,7 @@ aside {
 .multiselect--active {
   z-index: 1000 !important;
 }
+
+.el-form--label-top .el-form-item__label {
+   padding: 0 0 0 0;
+}
